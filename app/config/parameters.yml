@@ -1,0 +1,13 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: sales_invoice_symfony
+    database_user: root
+    database_password: null
+    mailer_transport: smtp
+    mailer_host: smtp.gmail.com
+    mailer_user: 
+    mailer_password: 
+    secret: 5a96467f6e9c98770caf0a342011379964b11e93
+   

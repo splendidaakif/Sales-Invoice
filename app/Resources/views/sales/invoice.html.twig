@@ -1,0 +1,140 @@
+{% extends '::base.html.twig' %}
+
+{% block title 'Sales Invoice' %}
+
+{% block body %}
+    <br/>
+  <center>
+    <u class=" head">{{'SALES INVOICE'}}</u>
+      <br/><br/><br/><br/>
+    <form action="{{ path('submit') }}" method="post">
+
+
+
+      <table>
+        <tr>
+          <th>
+            Name: <input type="text" name="customer_name" style="width:710px;"required >
+          </th>
+          <th>
+            Phone: <input type="number" name="pho_ne" style="width:150px;" required>
+          </th>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <th>
+            Address
+          </th>
+          <th>
+            Date
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <input type="text"size="40" name="add_ress" style="width:700px;" required>
+          </td>
+          <td>
+            <select name="day">
+
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+              <option>16</option>
+              <option>17</option>
+              <option>18</option>
+              <option>19</option>
+              <option>20</option>
+              <option>21</option>
+              <option>22</option>
+              <option>23</option>
+              <option>24</option>
+              <option>25</option>
+              <option>26</option>
+              <option>27</option>
+              <option>28</option>
+              <option>29</option>
+              <option>30</option>
+              <option>31</option>
+            </select>
+            <select name="month">
+
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+            </select>
+            <select name="year" >
+              <option>2018</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <th>
+            ID
+          </th>
+          <th>
+            Description
+          </th>
+          <th>
+            Quantity
+          </th>
+          <th>
+            Unit Price
+          </th>
+        </tr>
+        <tr ng-repeat="row in addarray">
+          <td>
+            [[$index +1]]
+          </td>
+          <td>
+            <input type="text"  name="descri_ption[]" style="width:700px;" required>
+          </td>
+          <td>
+            <input  type="number"   name="quan_tity[]" style="width:80px;" required>
+          </td>
+          <td>
+            <input type="number"   name="unit_price[]"required>
+          </td>
+		  <td>
+			<button ng-click="removeiteamsRows()" class="fa fa-times remove"></button>
+		  </td>
+
+        </tr>
+
+      </table>
+      <table>
+        <tr>
+          <th>
+            Enter the Email On which Invoice will be Mailed <input type="email"   name="email"required>
+          </th>
+        </tr>
+      </table>
+      <button ng-click="additeamsRows()" class="fa fa-plus click"></button>
+      <input type="submit" name="submit" style="width:100px; height:60px; font-size:20px; "  value="Submit">
+    </form>
+  </center>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="invoiceModule">
+    <head>
+        <meta charset="UTF-8" />
+        {% block head %}
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+        {% endblock %}
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+          <link rel="stylesheet" href="{{asset('invoice/css/invoice.css')}}"/>
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body ng-controller="invoiceController">
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('invoice/js/angular.min.js') }}"></script>
+            <script src="{{ asset('invoice/js/angular-sanitize.min.js') }}"></script>
+            <script src="{{ asset('invoice/js/invoice.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>
